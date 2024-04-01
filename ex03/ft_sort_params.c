@@ -12,19 +12,14 @@
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_str(char *str)
 {
-	write(1, &c, 1);
-}
-
-void ft_str(char *str)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		ft_putchar(str[i]);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
@@ -42,12 +37,11 @@ int	ft_strcmp(char *s1, char *s2)
 		return (s1[i] - s2[i]);
 }
 
-
-void bubble_Swap(char **words, int size)
+void	bubble_swap(char **words, int size)
 {
-	int i;
-	int j;
-	char *temp;
+	int		i;
+	int		j;
+	char	*temp;
 
 	i = 1;
 	while (i < size)
@@ -67,22 +61,22 @@ void bubble_Swap(char **words, int size)
 	}
 }
 
-void print_params(char **words, int size)
+void	print_params(char **words, int size)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < size)
 	{
 		ft_str(words[i]);
-		ft_putchar('\n');
+		write(1, "\n", 1);
 		i++;
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	bubble_Swap(argv, argc);
+	bubble_swap(argv, argc);
 	print_params(argv, argc);
 	return (0);
 }

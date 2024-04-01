@@ -12,14 +12,14 @@
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_str(char *str)
+void	ft_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -29,9 +29,9 @@ void ft_str(char *str)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    argc--;
+	argc--;
 	while (argc)
 	{
 		ft_str(argv[argc]);
